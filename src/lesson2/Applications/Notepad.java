@@ -1,12 +1,13 @@
 package lesson2.Applications;
 
-import lesson2.Document.TextFormat;
+import lesson2.Document.TextDocument;
+//import lesson2.Format.Json;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Notepad {
-    private List<TextFormat> documents;
+    private List<TextDocument> documents;
     private int index;
 
     public Notepad() {
@@ -15,15 +16,15 @@ public class Notepad {
     }
 
     public void newFile() {
-        documents.add(new TextFormat());
+        documents.add(new TextDocument());
         index++;
     }
 
-    public TextFormat currentDocument() {
+    public TextDocument currentDocument() {
         return documents.get(index);
     }
 
-    public void SaveAs(String path, TextFormat format) {
+    public void SaveAs(String path, TextDocument format) {
         format.SaveAs(documents.get(index), path);
     }
 }
